@@ -6,15 +6,12 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            string input = "aabbbccccd";
-            string result = RepeatingCharContiguous.function(input);
-            Console.WriteLine(result);
+            string s = "gfg";
+            DistinctSubsequences distinct = new DistinctSubsequences();
+            List<string> result = distinct.function(s);
+            Console.WriteLine(result.ToString());
             Console.WriteLine("End of main program");
             Console.ReadKey();
-
-            string[] a = { "geeze", "geeksforgeeks", "geeks"};
-            Array.Sort(a);
-            Console.WriteLine();
         }
     }
 }
