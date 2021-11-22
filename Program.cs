@@ -8,11 +8,13 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            string input = "abc";
-            PermutationOfString permute = new PermutationOfString();
-            permute.function(input);
-            //permute.list.ForEach(p => Console.WriteLine(p));
-            Console.WriteLine(string.Join(" ", permute.list));
+            Graph G = new Graph();
+            G.addNode("A");
+            G.addNode("B");
+            G.addNode("C");
+            G.addEdge("B", "A");
+            G.addEdge("C", "A");
+            G.print();
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }

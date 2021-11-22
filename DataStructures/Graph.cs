@@ -8,32 +8,63 @@ namespace Coding.DataStructures
     {
         private class Node
         {
-            string label;
+            public string label;
             public Node(string label)
             {
                 this.label = label;
             }
         }
 
-        Dictionary<Node, LinkedList<Node>> graph;
+        Dictionary<Node, List<Node>> graph;
+        Dictionary<string, Node> nodes;
+
+        public void print()
+        {
+            foreach (var key in graph.Keys)
+            {
+                
+                Console.Write(key.label + "->");
+                graph[key].ForEach(m => Console.Write(m.label + " "));
+                Console.WriteLine();
+            }
+        }
         public Graph()
         {
-            this.graph = new Dictionary<Node, LinkedList<Node>>();
+            this.nodes = new Dictionary<string, Node>();
+            this.graph = new Dictionary<Node, List<Node>>();
         }
 
         public void addNode(string label)
         {
             if (label.Length == 0 || label == null)
                 return;
-            this.graph.Add(new Node(label), new LinkedList<Node>());
+            if (this.nodes.ContainsKey(label))
+                return;
+            this.nodes.Add(label, new Node(label));
+            graph.Add(nodes[label], new List<Node>());
         }
 
         public void removeNode(string label)
         {
             if (label.Length == 0 || label == null)
-                return;
+                return;         
+        }
 
-            
+        public void addEdge(string to, string from)
+        {
+            Node toNode = null, fromNode = null;
+            if (nodes.ContainsKey(to) && nodes.ContainsKey(from))
+            {
+                toNode = nodes[to];
+                fromNode = nodes[from];
+            }
+            else
+            {
+                return;
+            }
+
+            graph[fromNode].Add(toNode);
+            graph[toNode].Add(fromNode);
         }
     }
 }
