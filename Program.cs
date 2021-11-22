@@ -14,8 +14,12 @@ namespace Coding
             G.addNode("C");
             G.addEdge("B", "A");
             G.addEdge("C", "A");
-            G.print();
+            G.addNode("D");
+            G.addNode("E");
+            G.addEdge("A", "E");
+            G.DepthFirstTraversal("A");
             Console.WriteLine("End of main program");
+            
             Console.ReadKey();
         }
     }

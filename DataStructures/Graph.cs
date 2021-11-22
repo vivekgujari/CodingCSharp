@@ -44,11 +44,6 @@ namespace Coding.DataStructures
             graph.Add(nodes[label], new List<Node>());
         }
 
-        public void removeNode(string label)
-        {
-            if (label.Length == 0 || label == null)
-                return;         
-        }
 
         public void addEdge(string to, string from)
         {
@@ -66,5 +61,54 @@ namespace Coding.DataStructures
             graph[fromNode].Add(toNode);
             graph[toNode].Add(fromNode);
         }
+        public void removeNode(string label)
+        {
+            if (label.Length == 0 || label == null)
+                return;
+
+            Node n = nodes[label];
+            if (n == null)
+                return;
+
+            foreach (var key in graph.Keys)
+            {
+                graph[key].Remove(n);
+            }
+            nodes.Remove(label);
+            graph.Remove(n);
+        }
+
+        public void removeEdge(string from, string to)
+        {
+            Node fromNode = nodes[from];
+            Node toNode = nodes[to];
+            if (fromNode == null || toNode == null)
+                return;
+            graph[fromNode].Remove(toNode);
+        }
+
+        public void DepthFirstTraversal(string node)
+        {
+            HashSet<Node> set = new HashSet<Node>();
+            DFT(nodes[node], set);
+            foreach(var item in set)
+                Console.WriteLine(item.label);
+        }
+
+        private void DFT(Node node, HashSet<Node> set)
+        {
+            if (node == null)
+                return;
+            if (set.Contains(node))
+                return;
+
+            set.Add(node);
+
+            foreach (var n in graph[node])
+            {
+                DFT(n, set);
+            }
+        }
+
     }
 }
