@@ -8,9 +8,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            string str = "01020100011002112201";
-            int result = Equal_0_1_2.function(str);
-            Console.WriteLine(result);
+            int[] array = { 2, 7, 7, 7, 9, 8, 5};
+            int[] result = LongestSubarraywithKdistinctelements.function(array, 4);
+            Console.WriteLine(string.Join(",", result));
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
