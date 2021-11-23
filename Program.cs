@@ -8,11 +8,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            string input = "abc";
-            PermutationOfString permute = new PermutationOfString();
-            permute.function(input);
-            //permute.list.ForEach(p => Console.WriteLine(p));
-            Console.WriteLine(string.Join(" ", permute.list));
+            string str = "01020100011002112201";
+            int result = Equal_0_1_2.function(str);
+            Console.WriteLine(result);
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
