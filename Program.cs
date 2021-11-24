@@ -8,9 +8,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            int[] array = { 2, 7, 7, 7, 9, 8, 5};
-            int[] result = LongestSubarraywithKdistinctelements.function(array, 4);
-            Console.WriteLine(string.Join(",", result));
+            string str1 = "AB";
+            string str2 = "CD";
+            PrintInterLeavingOfStrings.function(str1, str2);
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
