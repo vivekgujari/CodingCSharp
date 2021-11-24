@@ -8,9 +8,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            string str1 = "AB";
-            string str2 = "CD";
-            PrintInterLeavingOfStrings.function(str1, str2);
+            int[] array = { -2, -3, 4, -1, -2, 1, 5, -3};
+            int[] result = LargestSumContiguous.function(array);
+            Console.WriteLine(string.Join(",", result));
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
