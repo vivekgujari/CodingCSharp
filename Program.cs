@@ -8,8 +8,8 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            int[] array = { -2, -3, 4, -1, -2, 1, 5, -3};
-            int[] result = LargestSumContiguous.function(array);
+            int[] array = { 4, 5, 2, 25, 1, 6, 18, 3};
+            int[] result = NextGreaterElement.function(array);
             Console.WriteLine(string.Join(",", result));
             Console.WriteLine("End of main program");
             Console.ReadKey();
