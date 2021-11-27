@@ -8,7 +8,7 @@ namespace Coding.Sorting
     {
         public static void Sort(int[] array, int left, int right)
         {
-            if (left >= right)
+            if (left > right)
                 return;
             // partition
             int p = partition(array, 0, right);
