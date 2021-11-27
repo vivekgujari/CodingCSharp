@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Coding.DataStructures;
+using Coding.Sorting;
 using DataStructures;
 namespace Coding
 {
@@ -8,9 +9,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            MinKnightSteps KnightGame = new MinKnightSteps();
-            KnightGame.MinStepsByKnight(4, 3, 2, 5);
-            Console.WriteLine($"Minimum steps to reach target is {KnightGame.min}");
+            int[] array = { 2, 7, 3, 6, 5, 1};
+            QuickSort.Sort(array, 0, array.Length - 1);
+            Console.WriteLine(string.Join(",", array));
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
