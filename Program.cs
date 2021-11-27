@@ -8,9 +8,9 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            SnakeAndLadder game = new SnakeAndLadder();
-            game.MinDiceThrownToWin();
-            Console.WriteLine($"Minimum dice thrown to win game is {game.min}");
+            MinKnightSteps KnightGame = new MinKnightSteps();
+            KnightGame.MinStepsByKnight(4, 3, 2, 5);
+            Console.WriteLine($"Minimum steps to reach target is {KnightGame.min}");
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
