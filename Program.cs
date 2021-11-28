@@ -9,9 +9,14 @@ namespace Coding
     {
         static void Main(string[] args)
         {
-            int[] array = { 2, 7, 3, 6, 5, 1};
-            MergeSort.Sort(array);
-            Console.WriteLine(string.Join(",", array));
+            QueueUsingStacks queue = new QueueUsingStacks();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            int a = queue.Deque();
+            int b = queue.Deque();
+            Console.WriteLine($"{a} {b}");
             Console.WriteLine("End of main program");
             Console.ReadKey();
         }
